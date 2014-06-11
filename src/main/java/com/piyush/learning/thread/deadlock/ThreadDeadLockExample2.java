@@ -1,15 +1,16 @@
-package com.piyush.learning.thread;
+package com.piyush.learning.thread.deadlock;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by piyush on 6/10/14.
+ * Created by piyush on 6/9/14.
  *
- *Instead of having a lock on List create an object lock.
+ * Avoiding the deadlock situation by having thread obtains an exclusive lock on the list before it uses it
+ *
  *
  */
-public class ThreadDeadLockExample3 {
+public class ThreadDeadLockExample2 {
 
     public static double calculateAverage(final List<Integer> list) {
         double total = 0;
@@ -23,8 +24,6 @@ public class ThreadDeadLockExample3 {
     }
 
     public static void main(final String[] args) throws Exception {
-        // Used as a lock instead of the list itself
-        final Object lock = new Object();
 
         final List<Integer> list = new ArrayList<Integer>();
 
@@ -36,8 +35,8 @@ public class ThreadDeadLockExample3 {
         final Thread threadA = new Thread(new Runnable() {
             @Override
             public void run() {
-                synchronized (lock) {
-                    final double average = ThreadDeadLockExample3.calculateAverage(list);
+                synchronized (list) {
+                    final double average = ThreadDeadLockExample2.calculateAverage(list);
                     ThreadUtils.log("Average: %.2f", average);
                 }
             }
@@ -47,8 +46,9 @@ public class ThreadDeadLockExample3 {
         final Thread threadB = new Thread(new Runnable() {
             @Override
             public void run() {
-                synchronized (lock) {
+                synchronized (list) {
                     for (int i = 0; i < list.size(); i++) {
+                        //ThreadUtils.log("Modifying list with %s" , i );
                         list.set(i, list.get(i) * 2);
                     }
                 }
@@ -57,8 +57,8 @@ public class ThreadDeadLockExample3 {
         threadB.start();
 
     /* Wait for the threads to stop */
-        threadA.join();
         threadB.join();
+        threadA.join();
     }
 
 }

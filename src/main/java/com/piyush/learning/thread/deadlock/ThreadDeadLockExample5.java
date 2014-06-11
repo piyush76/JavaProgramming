@@ -1,4 +1,4 @@
-package com.piyush.learning.thread;
+package com.piyush.learning.thread.deadlock;
 
 /**
  * Created by piyush on 6/10/14.

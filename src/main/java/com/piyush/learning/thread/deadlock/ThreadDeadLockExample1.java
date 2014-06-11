@@ -1,4 +1,4 @@
-package com.piyush.learning.thread;
+package com.piyush.learning.thread.deadlock;
 
 import java.util.ArrayList;
 import java.util.List;
