@@ -2,7 +2,7 @@
  * Currency
  * Copyright (c) 2001-2006 MessageOne Inc.
  */
-package com.piyush.learning.design.factory;
+package com.piyush.learning.design.factory.currency;
 
 /**
  * @author piyush

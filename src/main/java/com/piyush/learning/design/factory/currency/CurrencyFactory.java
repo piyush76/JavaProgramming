@@ -2,15 +2,23 @@
  * CurrencyFactory
  * Copyright (c) 2001-2006 MessageOne Inc.
  */
-package com.piyush.learning.design.factory;
+package com.piyush.learning.design.factory.currency;
+
+import com.piyush.learning.design.factory.currency.Currency;
+import com.piyush.learning.design.factory.currency.Rupee;
+import com.piyush.learning.design.factory.currency.SGDDollar;
+import com.piyush.learning.design.factory.currency.USDollar;
 
 /**
  * @author piyush
  */
 class CurrencyFactory {
 
-    public static Currency createCurrency(String country) {
+    public Currency getCurrency(String country) {
 
+        if(country==null ){
+           throw new IllegalArgumentException("Country Can't be null");
+        }
         if (country.equalsIgnoreCase("India")) {
             return new Rupee();
         } else if (country.equalsIgnoreCase("Singapore")) {
