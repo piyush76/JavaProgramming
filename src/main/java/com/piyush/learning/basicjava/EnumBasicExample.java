@@ -8,10 +8,20 @@ import sun.plugin2.message.ModalityChangeMessage;
 public class EnumBasicExample {
 
     private Coffee coffeeName;
+    private Condiments condiment ;
 
-    public EnumBasicExample(Coffee cName) {
+    public EnumBasicExample(Coffee cName,Condiments condiments ) {
+
+        this.condiment = condiments;
         this.coffeeName = cName;
     }
+
+    public EnumBasicExample(Coffee cName ) {
+
+
+        this.coffeeName = cName;
+    }
+
 
 
 
@@ -27,6 +37,23 @@ public class EnumBasicExample {
         private double cost;
 
         Coffee(double cost) {
+            this.cost = cost;
+        }
+    }
+
+
+    public static enum Condiments {
+        Milk(.29),
+
+        Suger(.17) ,
+
+        Creamer(.19),
+
+        Cream(.27);
+
+        private double cost;
+
+        Condiments(double cost) {
             this.cost = cost;
         }
     }
