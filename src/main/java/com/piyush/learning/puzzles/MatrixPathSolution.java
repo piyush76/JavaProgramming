@@ -13,16 +13,16 @@ package com.piyush.learning.puzzles;
     the above 2-D array, return the number of paths from the top-left
     cell to the bottom-right cell (i.e. (0,0) to (M-1,N-1)).
  */
-public class Solution {
+public class MatrixPathSolution {
     /**
-     *
      * @param a     The two dimensional array in which paths
      *              have to be found
      * @param M     horizontal index
      * @param N     vertical index
+     * @param count counter to keep track of valid paths
      * @return number of valid paths found
      */
-    private int numberOfPaths(int[][] a, int M, int N) {
+    private int numberOfPaths(int[][] a, int M, int N, int count) {
 
         int iMax = a.length - 1;
         int jMax = a[0].length - 1;
@@ -44,7 +44,7 @@ public class Solution {
         // count will be incremented and bubbled up
         // through the recursive calls.
         if (M + 1 <= iMax && a[M + 1][N] == 1) {
-            count = numberOfPaths(a, M + 1, N);
+            count = numberOfPaths(a, M + 1, N, count);
         }
 
         // try to reach a[iMax][jMax] by moving down
@@ -52,7 +52,7 @@ public class Solution {
         // count will be incremented and bubbled up
         // through the recursive calls.
         if (N + 1 <= jMax && a[M][N + 1] == 1) {
-            count = numberOfPaths(a, M, N + 1);
+            count = numberOfPaths(a, M, N + 1, count);
         }
 
         // return the count.
@@ -60,49 +60,49 @@ public class Solution {
     }
 
     public static void main(String args[]) {
-        Solution solution = new Solution();
+        MatrixPathSolution solution = new MatrixPathSolution();
 
         int[][] a = new int[][]{
                 {1, 0, 0},
                 {1, 1, 1},
                 {0, 1, 1}
         };
-        System.out.println("Expected = 2, Found = " +   solution.numberOfPaths(a, 0, 0));
+        System.out.println("Expected = 2, Found = " +   solution.numberOfPaths(a, 0, 0, 0));
 
         a = new int[][]{
                 {1, 1, 0},
                 {1, 1, 1},
                 {0, 1, 1}
         };
-        System.out.println("Expected = 4, Found = " +      solution.numberOfPaths(a, 0, 0));
+        System.out.println("Expected = 4, Found = " +      solution.numberOfPaths(a, 0, 0, 0));
 
         a = new int[][]{
                 {1, 1, 1},
                 {1, 1, 1},
                 {1, 1, 1}
         };
-        System.out.println("Expected = 6, Found = " +   solution.numberOfPaths(a, 0, 0));
+        System.out.println("Expected = 6, Found = " +   solution.numberOfPaths(a, 0, 0, 0));
 
         a = new int[][]{
                 {0, 1, 1},
                 {1, 1, 1},
                 {1, 1, 1}
         };
-        System.out.println("Expected = 0, Found = " +    solution.numberOfPaths(a, 0, 0));
+        System.out.println("Expected = 0, Found = " +    solution.numberOfPaths(a, 0, 0, 0));
 
         a = new int[][]{
                 {1, 1, 1},
                 {1, 1, 1},
                 {1, 1, 0}
         };
-        System.out.println("Expected = 0, Found = " +    solution.numberOfPaths(a, 0, 0));
+        System.out.println("Expected = 0, Found = " +    solution.numberOfPaths(a, 0, 0, 0));
 
         a = new int[][]{
                 {1, 1},
                 {0, 1}
 
         };
-        System.out.println("Expected = 1, Found = " +    solution.numberOfPaths(a, 0, 0));
+        System.out.println("Expected = 1, Found = " +    solution.numberOfPaths(a, 0, 0, 0));
 
         a = new int[][]{
                 {1,1,1,1},
@@ -111,7 +111,7 @@ public class Solution {
 
 
         };
-        System.out.println("Expected = 10, Found = " +    solution.numberOfPaths(a, 0, 0));
+        System.out.println("Expected = 10, Found = " +    solution.numberOfPaths(a, 0, 0, 0));
 
         a = new int[][]{
                 {0,1,1,1},
@@ -120,11 +120,6 @@ public class Solution {
 
 
         };
-        System.out.println("Expected = 0, Found = " +    solution.numberOfPaths(a, 0, 0));
-
-        3 4 1 1 1 1
-        1 1 1 1
-        1 1 1 1
-
+        System.out.println("Expected = 0, Found = " +    solution.numberOfPaths(a, 0, 0, 0));
     }
 }

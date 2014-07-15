@@ -18,7 +18,7 @@ public class SudokuChecker {
                 {9, 6, 1, 5, 3, 7, 2, 8, 4}, {2, 8, 7, 4, 1, 9, 6, 3, 5}, {3, 4, 5, 2, 8, 6, 1, 7, 9}
         };
 
-        // Solution should have 3 x 3 subsquares containing no duplicates
+        // MatrixPathSolution should have 3 x 3 subsquares containing no duplicates
         System.out.println(checkSudokuSolution(arr, 3));
 
         // Swap a couple of values to mess something up, try it again
