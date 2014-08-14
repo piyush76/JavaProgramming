@@ -37,6 +37,26 @@
     <entry_points version="2.0" />
   </component>
   <component name="IdProvider" IDEtalkID="3F1EA42DE090622FEA1AD6991EC0FFBC" />
+  <component name="InspectionProjectProfileManager">
+    <profiles>
+      <profile version="1.0" is_locked="false">
+        <option name="myName" value="Project Default" />
+        <option name="myLocal" value="false" />
+        <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+          <option name="ignoredIdentifiers">
+            <value>
+              <list size="1">
+                <item index="0" class="java.lang.String" itemvalue="getopt" />
+              </list>
+            </value>
+          </option>
+        </inspection_tool>
+      </profile>
+    </profiles>
+    <option name="PROJECT_PROFILE" value="Project Default" />
+    <option name="USE_PROJECT_PROFILE" value="true" />
+    <version value="1.0" />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
@@ -175,6 +195,16 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+  </component>
+  <component name="libraryTable">
+    <library name="com.rabbitmq:amqp-client:3.0.3" type="repository">
+      <properties maven-id="com.rabbitmq:amqp-client:3.0.3" />
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/rabbitmq/amqp-client/3.0.3/amqp-client-3.0.3.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
   </component>
 </project>
 

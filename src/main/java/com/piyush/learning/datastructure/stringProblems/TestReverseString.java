@@ -1,5 +1,7 @@
 package com.piyush.learning.datastructure.stringProblems;
 
+import java.util.LinkedList;
+
 /**
  * Created with IntelliJ IDEA.
  * User: poonamgupta78
@@ -16,6 +18,7 @@ public class TestReverseString {
         String someString = "jack in the box";
         System.out.println("reverseString1 -- " + reverseString1(someString));
         System.out.println("reverseString2 --  " + reverseString2(someString));
+        System.out.println("reverseRecurive --  " + reverseRecurive(someString));
 
     }
 
@@ -44,4 +47,22 @@ public class TestReverseString {
         return buff.toString();
     }
 
-}
+
+    //Recursion
+
+    public static String reverseRecurive(String str) {
+
+        if(str.length()<= 1){
+            return str;
+        }
+
+        System.out.println(str.substring(1)+str.charAt(0) );
+        return reverseRecurive(str.substring(1) + str.charAt(0));
+    }
+
+
+
+
+
+
+    }

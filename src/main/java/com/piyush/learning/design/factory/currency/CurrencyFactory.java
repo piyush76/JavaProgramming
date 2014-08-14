@@ -16,7 +16,7 @@ class CurrencyFactory {
 
     public Currency getCurrency(String country) {
 
-        if(country==null ){
+        if((country == null) || (country == " ")){
            throw new IllegalArgumentException("Country Can't be null");
         }
         if (country.equalsIgnoreCase("India")) {
@@ -26,9 +26,14 @@ class CurrencyFactory {
         } else if (country.equalsIgnoreCase("US")) {
             return new USDollar();
         }
-        throw new IllegalArgumentException("No such currency");
+
+        throw new IllegalArgumentException("No such Country");
+
+
     }
+
 }
+
 
 
 
