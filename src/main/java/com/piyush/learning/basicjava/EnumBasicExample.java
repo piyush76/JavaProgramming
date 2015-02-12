@@ -1,7 +1,5 @@
 package com.piyush.learning.basicjava;
 
-import sun.plugin2.message.ModalityChangeMessage;
-
 /**
  * Created by piyush on 6/13/14.
  */
