@@ -2,7 +2,7 @@
  * LinkedList
  * Copyright (c) 2001-2006 MessageOne Inc.
  */
-package com.piyush.learning.datastructure.datastructure;
+package com.piyush.learning.datastructure.linkedList;
 
 /**
  * @author piyush
