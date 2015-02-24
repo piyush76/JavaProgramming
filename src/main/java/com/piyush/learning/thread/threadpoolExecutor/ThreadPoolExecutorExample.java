@@ -35,7 +35,7 @@ public class ThreadPoolExecutorExample implements Runnable {
 
         ExecutorService executor = Executors.newFixedThreadPool(NO_OF_THREADS); // create a pool of 3 threads
 
-        for (int i = 10000; i < 10100; i++) {
+        for (int i = 1; i < 10; i++) {
             Runnable worker = new ThreadPoolExecutorExample(i); // create worker threads
             executor.execute(worker); // add runnables to the work queue
         }
