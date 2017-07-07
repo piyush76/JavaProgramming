@@ -1,6 +1,5 @@
 package com.piyush.learning.hackerrank;
 
-///Complete this code or write your own from scratch
 import java.util.*;
 
 class TelephoneBook {
